@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/index-page.css" />
+        <title>Mini Message Board</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="header-h1">Message Board</h1>
+            <a href="/new" class="btn create-post">Create Post</a>
+        </header>
+       
+        <main>
+            <section>
+                <% if(!data || !data.length) { %>
+                    <p class="empty-message">There are no posts :( </p>
+                <% } else { %>
+                    <%- include("../partials/messagesList", {data}) %>
+                <% } %>
+                
+            </section>
+            
+        </main>
+    </body>
+</html>

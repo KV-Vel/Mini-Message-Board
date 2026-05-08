@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/404.css" />
+    </head>
+    <body>
+        <section class="error-wrapper">
+            <h1><%=status %></h1>
+            <p><%= message %></p>
+            <a href="/" class="go-back-btn">Go Back</a>
+        </section>
+    </body>
+</html>

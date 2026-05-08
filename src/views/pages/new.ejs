@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/new-page.css" />
+        <title>Mini Message Board</title>
+        <script src="https://kit.fontawesome.com/e35a6b4d49.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="header-new">
+            <div class="back-btn-wrapper">
+                <i class="fa-solid fa-arrow-left"></i>
+                <a href="/" class="back-btn">Back to Message Board</a>
+            </div>
+            <h1 class="header-h1">Create New Post</h1>
+        </header>
+        <main class="form-wrapper">
+            <form method="POST" action="/new">
+                <div class="input-wrapper">
+                    <label for="name">Name</label>
+                    <input
+                        id="name"
+                        name="user"
+                        placeholder="Enter your name..."
+                        autocomplete="off"
+                        required
+                        minlength="2"
+                        maxlength="32"
+                    />
+                </div>
+                <div class="input-wrapper">
+                    <label for="message">Your Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="15"
+                        placeholder="Share your message with everybody..."
+                        autocomplete="off"
+                        required
+                        minlength="2"
+                        maxlength="32"
+                    ></textarea>
+                </div>
+                <button class="btn submit-btn">Post Message</button>
+            </form>
+        </main>
+    </body>
+</html>

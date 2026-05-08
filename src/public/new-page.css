@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: #070f2b;
+    background-image:
+        radial-gradient(at 13% 83%, rgb(33, 7, 43) 0%, transparent 60%),
+        radial-gradient(at 62% 35%, #06051a 0%, transparent 50%),
+        radial-gradient(at 70% 66%, #535c91 0%, transparent 40%),
+        radial-gradient(at 69% 53%, #9290c3 0%, transparent 30%);
+}
+
+.back-btn-wrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.back-btn,
+.fa-arrow-left {
+    transition: all 0.2s ease;
+    color: rgb(124, 134, 255);
+}
+
+.back-btn {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+}
+
+.back-btn-wrapper:hover {
+    .back-btn {
+        transform: translateX(-5px);
+        color: #95a6fa;
+    }
+    .fa-arrow-left {
+        transform: translateX(-5px);
+        transition-delay: 0.1s;
+        color: #95a6fa;
+    }
+}
+
+.header-new {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-wrapper {
+    background-color: #1919197a;
+    padding: 2rem;
+    color: var(--pale-white);
+    font-family: "Urbanist", sans-serif;
+    border-radius: 5px;
+    border: 0.5px solid rgba(128, 128, 128, 0.082);
+    margin: 0 2rem 2rem 2rem;
+
+    label {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    input,
+    textarea {
+        padding: 1rem;
+        border: 2px solid rgba(128, 128, 128, 0.082);
+        border-radius: 5px;
+        background-color: #0c0c0ca9;
+        font-family: monospace;
+        color: var(--main-color);
+    }
+
+    :where(input, textarea):hover {
+        border-color: rgba(128, 128, 128, 0.192);
+    }
+
+    :where(input, textarea):focus {
+        border-color: rgb(57, 73, 171);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.submit-btn {
+    align-self: flex-start;
+    background-color: rgb(57, 73, 171);
+    color: var(--main-color);
+    padding: 18px 25px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, rgb(85, 0, 119), #4e00df);
+    transform: scale(1.05);
+}

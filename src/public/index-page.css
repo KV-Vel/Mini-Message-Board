@@ -1,0 +1,101 @@
+header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+body {
+    background-color: #070f2b;
+    background-image:
+        radial-gradient(at 13% 83%, rgb(33, 7, 43) 0%, transparent 60%),
+        radial-gradient(at 62% 35%, #06051a 0%, transparent 50%),
+        radial-gradient(at 70% 66%, #535c91 0%, transparent 40%),
+        radial-gradient(at 69% 53%, #9290c3 0%, transparent 30%);
+}
+
+section {
+    font-family: "Urbanist", monospace;
+}
+
+.create-post {
+    background: rgb(57, 73, 171);
+    padding: 18px 25px;
+    transition: transform 0.2s ease-out;
+}
+
+.create-post:hover {
+    background: linear-gradient(to right, rgb(85, 0, 119), #4e00df);
+    transform: scale(1.05);
+}
+
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-block-start: 2rem;
+}
+
+.empty-message {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+.card {
+    background-color: #0c0c0ca9;
+    color: var(--main-color);
+    border-radius: 5px;
+    padding: 2rem;
+    border: 0.5px solid rgba(128, 128, 128, 0.082);
+
+    .avatar-placeholder {
+        min-height: 60px;
+        min-width: 60px;
+        max-width: 60px;
+        grid-column: 1;
+        grid-row: 1;
+        border-radius: 5px;
+        /* background-color: #535c91; */
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        /* font-family: "Urbanist", sans-serif; */
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        .card-header-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .date {
+                color: var(--secondary-color);
+
+                font-size: 0.85rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .text-wrapper {
+        /* margin-inline-start: calc(60px + 2rem); */
+        margin-block-start: 1rem;
+        .text {
+            color: rgb(209, 213, 219);
+            font-weight: 500;
+        }
+    }
+
+    /* .text {
+        font-family: "Urbanist", sans-serif;
+    } */
+}
+
+.card:hover {
+    border-color: rgba(128, 128, 128, 0.192);
+}
