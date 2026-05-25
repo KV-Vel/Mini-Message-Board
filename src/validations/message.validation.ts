@@ -14,7 +14,6 @@ export const messageValidation = [
         .withMessage(`Name ${strTypeErr}`)
         .isLength({ min: 2, max: 32 })
         .withMessage("Name cannot be bigger than 32 and smaller than 2 characters")
-        .escape()
         .bail({ level: "request" }),
     body("message")
         .exists()
@@ -26,6 +25,5 @@ export const messageValidation = [
         .withMessage(`Message ${strTypeErr}`)
         .isLength({ min: 2, max: 200 })
         .withMessage("Name cannot be bigger than 200 and smaller than 2 characters")
-        .escape()
         .bail({ level: "request" }),
 ];
