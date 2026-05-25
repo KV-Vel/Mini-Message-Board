@@ -5,7 +5,7 @@ const localDbConfig: ConnectionConfig = {
 };
 
 const cloudDbConfig: ConnectionConfig = {
-    connectionString: process.env.CLOUD_DB_CONNECTION_STR,
+    connectionString: process.env.DATABASE_URL,
 };
 
 export const dbConfig = process.env.MODE === "production" ? cloudDbConfig : localDbConfig;
