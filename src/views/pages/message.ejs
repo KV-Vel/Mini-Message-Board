@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/message.css" />
+        <script src="https://kit.fontawesome.com/e35a6b4d49.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="header-column">
+            <%-include("../partials/backBtn") %>
+            <h1 class="header-h1">Message Details</h1>
+            <h2>WTF</h2>
+        </header>
+        <li class="card">
+            <div>
+                <div class="card-header">
+                    <div class="avatar-placeholder">A</div>
+                    <div class="card-header-text-wrapper">
+                        <h2><%= data.username %></h2>
+                        <time class="text date" datetime="<%= data.added %>"
+                            ><%= data.added %></time
+                        >
+                    </div>
+                </div>
+                <div class="text-wrapper">
+                    <p class="text"><%= data.text %></p>
+                </div>
+            </div>
+        </li>
+    </body>
+</html>

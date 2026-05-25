@@ -1,13 +1,12 @@
 <ul class="messages-list">
-      <!-- сделать if else чтобы обработать отображение пустого поля, если в db нет постов-->
                 <% data.forEach((item) => { %>
                     <li class="card">
                         <div >
                             <div class="card-header">
-                                <!-- <div class="avatar-placeholder" style="background-color: <%=item.color %>">A</div> -->
+                                <div class="avatar-placeholder" style="background-color: rgba(<%=item.color %>)"><%= item.username[0] %></div>
                                  <div class="card-header-text-wrapper">
-                                    <h2><%= item.user %></h2>
-                                    <time class="text date" datetime="<%= item.added %>"><%= item.added %></time>
+                                    <h2><%= item.username %></h2>
+                                    <time class="text date" datetime="<%= item.added.toLocaleDateString("sv-SE") %>"><%= item.added.toLocaleDateString("sv-SE") %></time>
                                 </div>
                             </div>
                              <div class="text-wrapper"> 
