@@ -1,26 +1,44 @@
-import db from "../db.ts";
-import type { Response, Request, NextFunction } from "express";
+import type { Response, Request } from "express";
 import CustomError from "../errors/CustomError.ts";
-function getPosts(req: Request, res: Response, next: NextFunction) {
+import getRandomRGBa from "../utils/getRandomRGB.ts";
+import { getMessages, insertMessage } from "../db/queries.ts";
+import { validationResult } from "express-validator";
+
+async function getPosts(req: Request, res: Response) {
     try {
-        const posts = db.data;
+        const posts = await getMessages();
 
         res.render("pages/index", { data: posts });
     } catch (error) {
-        const err = new CustomError(500, error?.message || "Something went wrong");
-        next(err);
+        console.error(error instanceof Error ? error.message : error);
+        throw new CustomError(500, "Something went wrong");
     }
 }
 
-function addPost(req: Request, res: Response, next: NextFunction) {
+async function addPost(req: Request, res: Response) {
     try {
+        const validationErrors = validationResult(req);
+
+        if (!validationErrors.isEmpty()) {
+            return res.status(400).render("pages/new", {
+                errors: validationErrors.array(),
+            });
+        }
+
         const { user, message } = req.body;
 
-        db.addItem({ text: message, user: user, added: new Date().toLocaleDateString("sv-SE") });
-        res.redirect("/");
+        const messagePayload = {
+            text: message,
+            user: user,
+            added: new Date().toLocaleDateString("sv-SE"),
+            color: getRandomRGBa().join(","),
+        };
+        await insertMessage(messagePayload);
+
+        res.redirect(303, "/");
     } catch (error) {
-        const err = new CustomError(400, error?.message || "Something went wrong");
-        next(err);
+        console.error(error instanceof Error ? error.message : error);
+        throw new CustomError(400, "Bad Request");
     }
 }
 
