@@ -15,12 +15,12 @@ app.set("views", path.join(import.meta.dirname, "views"));
 app.set("view engine", "ejs");
 
 const assetsPath = path.join(import.meta.dirname, "public");
-app.listen(process.env.PORT || 3000, (error) => {
+app.listen(process.env.PORT || 3001, (error) => {
     if (error) {
         throw error;
     }
 
-    console.log("Launched");
+    console.log("Listening on 3001");
 });
 
 app.use(express.static(assetsPath));
@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 });
 
 app.use((error: ResponseError, req: Request, res: Response, next: NextFunction) => {
-    const message = error.message || "Something went wrong";
+    const message = "Something went wrong";
     const status = error.status || 500;
     res.status(status);
     // Rendering error.ejs from views
