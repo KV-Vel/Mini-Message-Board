@@ -10,39 +10,6 @@ body {
         radial-gradient(at 69% 53%, #9290c3 0%, transparent 30%);
 }
 
-.back-btn-wrapper {
-    display: flex;
-    gap: 12px;
-}
-
-.back-btn,
-.fa-arrow-left {
-    transition: all 0.2s ease;
-    color: rgb(124, 134, 255);
-}
-
-.back-btn {
-    font-family: "Urbanist", sans-serif;
-    font-weight: 700;
-}
-
-.back-btn-wrapper:hover {
-    .back-btn {
-        transform: translateX(-5px);
-        color: #95a6fa;
-    }
-    .fa-arrow-left {
-        transform: translateX(-5px);
-        transition-delay: 0.1s;
-        color: #95a6fa;
-    }
-}
-
-.header-new {
-    flex-direction: column;
-    gap: 2rem;
-}
-
 .form-wrapper {
     background-color: #1919197a;
     padding: 2rem;
@@ -50,7 +17,7 @@ body {
     font-family: "Urbanist", sans-serif;
     border-radius: 5px;
     border: 0.5px solid rgba(128, 128, 128, 0.082);
-    margin: 0 2rem 2rem 2rem;
+    /* margin: 0 2rem 2rem 2rem; */
 
     label {
         text-transform: uppercase;
@@ -98,4 +65,14 @@ form {
 .submit-btn:hover {
     background: linear-gradient(to right, rgb(85, 0, 119), #4e00df);
     transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .form-wrapper {
+        padding: 1rem;
+        font-size: 0.85rem;
+        form {
+            gap: 1.5rem;
+        }
+    }
 }

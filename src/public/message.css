@@ -1,0 +1,8 @@
+body {
+    background-color: #070f2b;
+    background-image:
+        radial-gradient(at 13% 83%, rgb(33, 7, 43) 0%, transparent 60%),
+        radial-gradient(at 62% 35%, #06051a 0%, transparent 50%),
+        radial-gradient(at 70% 66%, #535c91 0%, transparent 40%),
+        radial-gradient(at 69% 53%, #9290c3 0%, transparent 30%);
+}

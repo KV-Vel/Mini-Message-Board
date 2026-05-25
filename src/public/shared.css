@@ -61,6 +61,16 @@ main {
     background: linear-gradient(to top, purple, transparent);
 }
 
+.header-column {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header-row {
+    align-items: center;
+    justify-content: space-between;
+}
+
 .btn {
     font-family: "Urbanist", sans-serif;
     font-weight: 600;
@@ -70,9 +80,42 @@ main {
     font-style: normal;
 }
 
+.back-btn-wrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.back-btn,
+.fa-arrow-left {
+    transition: all 0.2s ease;
+    color: rgb(124, 134, 255);
+}
+
+.back-btn {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+}
+
+.back-btn-wrapper:hover {
+    .back-btn {
+        transform: translateX(-5px);
+        color: #95a6fa;
+    }
+    .fa-arrow-left {
+        transform: translateX(-5px);
+        transition-delay: 0.1s;
+        color: #95a6fa;
+    }
+}
+
 @media (max-width: 600px) {
     header {
         flex-direction: column;
         gap: 1rem;
+        padding: 4rem 0.5rem 1rem 0.5rem;
+    }
+
+    main {
+        padding: 2rem 0.5rem;
     }
 }
